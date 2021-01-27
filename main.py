@@ -5,7 +5,7 @@ import requests
 import xml.etree.ElementTree as ET
 import time
 
-f = open("ex_ids.txt", "x")
+# f = open("ex_ids.txt", "x")
 start_time = time.time()
 for i in range(4622, 10000):
     key = '6C78A9C3-VB95-2721-9342-080027F47A94'
@@ -14,6 +14,7 @@ for i in range(4622, 10000):
     root = ET.fromstring(r.content)
     info_ok = False
     product_ok = False
+
     for child in root.iter('*'):
         print("--- %s seconds ---" % round(time.time() - start_time))
         if child.tag == 'wsrp' and child.attrib['status'] == 'ok':
@@ -27,17 +28,5 @@ for i in range(4622, 10000):
             f.write(str(i) + "\n")
             f.close()
             break
-
-        # print("--- %s seconds ---" % round(time.time() - start_time))
-        # print(child.tag)
-        # if child.tag == 'wsrp' and child.attrib['status'] == 'ok':
-        #     for child3 in root.iter('*'):
-        #         if child3.tag == 'name' and ('Filmora' in child3.text):
-        #             for child2 in root.iter('*'):
-        #                 if child2.tag == 'version' and str(child2.text)[0:1] == '8':
-        #                     print('Filmora found!', 'id =', i)
-        #                     f = open("ids.txt", "a")
-        #                     f.write(str(i) + "\n")
-        #                     f.close()
 
 print("--- %s seconds ---" % round(time.time() - start_time))
