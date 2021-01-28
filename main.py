@@ -5,9 +5,8 @@ import requests
 import xml.etree.ElementTree as ET
 import time
 
-# f = open("ex_ids.txt", "x")
 start_time = time.time()
-for i in range(4622, 10000):
+for i in range(1, 10000):
     key = '6C78A9C3-VB95-2721-9342-080027F47A94'
     not_i = 4222
     r = requests.get(f'http://platform.wondershare.com/rest/v2/downloader/runtime/?client_sign={key}&product_id={i}')
@@ -23,7 +22,7 @@ for i in range(4622, 10000):
             product_ok = True
 
         if info_ok and product_ok:
-            print(i, 'exists')
+            print(i, 'is the right one')
             f = open("ex_ids.txt", "a")
             f.write(str(i) + "\n")
             f.close()
