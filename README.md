@@ -5,3 +5,5 @@ This programs finds the ids of Filmora on official source(platform.wondershare.c
 http://platform.wondershare.com/rest/v2/downloader/runtime/?client_sign={6C78A9C3-VB95-2721-9342-080027F47A94}&product_id=
 
 Using the same key(client_sign) for all users is a bad thing but I don't have other key(yet)
+
+I just wanted to find Filmora 9 or 8 because I didn't like Filmora X... and suddenly I made this thing
